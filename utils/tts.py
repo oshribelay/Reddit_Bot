@@ -1,7 +1,7 @@
 from gtts import gTTS
 
 
-def text_to_speech(text, play_sound=False, is_comment=False, comment_id=None):
+def text_to_speech(text, is_comment=False, comment_id=None):
     language = "en"  # the language we are going to convert in
 
     # passing the text value to the engine and the language
