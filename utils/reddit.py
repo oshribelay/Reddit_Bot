@@ -4,7 +4,7 @@ from praw.models import MoreComments
 from dotenv import dotenv_values
 
 # parse .env file
-config = dotenv_values(".env")
+config = dotenv_values("../.env")
 print(config)
 
 # define user_agent
