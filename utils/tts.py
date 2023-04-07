@@ -1,8 +1,7 @@
 from gtts import gTTS
-from playsound import playsound
 
 
-def text_to_speech(text, play_sound=False):
+def text_to_speech(text, play_sound=False, is_comment=False, comment_id=None):
     language = "en"  # the language we are going to convert in
 
     # passing the text value to the engine and the language
@@ -10,10 +9,7 @@ def text_to_speech(text, play_sound=False):
     audio = gTTS(text=text, lang=language, slow=False)
 
     # saving the audio file
-    audio.save("../audio_files/audio.mp3")
-
-    # playing the audio file based on the play_sound parameter
-    if play_sound:
-        playsound("../audio_files/audio.mp3")
+    if is_comment:
+        audio.save(f"./audio_files/comment {comment_id}.mp3")
     else:
-        pass
+        audio.save(f"./audio_files/title.mp3")
