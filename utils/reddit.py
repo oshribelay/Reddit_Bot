@@ -8,8 +8,8 @@ from mutagen.mp3 import MP3
 
 def initialize_subreddit_object():
     # parse .env file
-    config = dotenv_values(".env")
-    print(config)
+    config = dotenv_values("../.env")
+    # print(config.values())
 
     # define user_agent
     user_agent = "python-reddit-bot"
@@ -69,12 +69,12 @@ def convert_comments_to_audio(comments_arr):
     for index, comment in comments_arr:
         if length <= 50:
             text_to_speech(comment, is_comment=True, comment_id=index)
-            print(f"saved comment {index}")
-            audio = MP3(f"./audio_files/comment {index}.mp3")
+            print(f"saved comment {index+1}")
+            audio = MP3(f"../audio_files/comment {index}.mp3")
             length_sec = audio.info.length
             length += length_sec
         else:
-            break
+            return index
 
 
 def convert_title_to_audio(title):

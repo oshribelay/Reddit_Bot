@@ -10,6 +10,6 @@ def text_to_speech(text, is_comment=False, comment_id=None):
 
     # saving the audio file
     if is_comment:
-        audio.save(f"./audio_files/comment {comment_id}.mp3")
+        audio.save(f"../audio_files/comment {comment_id}.mp3")
     else:
-        audio.save(f"./audio_files/title.mp3")
+        audio.save(f"../audio_files/title.mp3")
